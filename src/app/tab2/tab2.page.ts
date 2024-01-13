@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { FirebaseService } from '../services/firebase.service';
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +9,18 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  constructor(private router: Router,
+    private firebase : FirebaseService,){}
+  ngOnInit() {
+    this.listar()
+  }
+  listaUser: any = []
+  listar() {
+  this.firebase.getCollection('Usuario').subscribe((Clases)=>{
+  let aux = JSON.stringify(Clases)
+  this.listaUser=JSON.parse(aux);
+  console.log(this.listaUser)
+  })
+  }
 
 }

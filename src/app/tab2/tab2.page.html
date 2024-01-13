@@ -1,17 +1,20 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Contactos
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+<ion-content>
+  <ion-button [routerLink]="" fill="outline" expand="block">Agregar contacto</ion-button>
+  <ion-item *ngFor="let user of listaUser" [routerLink]="['/tabs/tab1/chat/'+user.id]">
+    {{user.nombre}}
+    <ion-thumbnail slot="start">
+      <img alt="Silhouette of mountains" src="{{user.imagen}}" />
+    </ion-thumbnail>
+    <ion-label>
+    </ion-label>
+  </ion-item>
+  
 </ion-content>
