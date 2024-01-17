@@ -20,7 +20,7 @@
 </ion-card-content>
 <ion-buttons>
   <ion-button  (click)="login(correo.value, contrasena.value)" style="color: rgb(255, 208, 0);" fill="clear">Ingresar</ion-button>
-  <ion-button  style="color: rgb(255, 208, 0);" fill="clear">Registrarse</ion-button>
+  <ion-button  [routerLink]="'tab1/'" style="color: rgb(255, 208, 0);" fill="clear">Registrarse</ion-button>
 </ion-buttons>
 
 <ion-item >

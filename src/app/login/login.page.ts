@@ -28,7 +28,7 @@ export class LoginPage implements OnInit {
     this.emailValue=''
     this.authService.checkAuth().then((user)=>{
       if(user){
-        this.router.navigate(['tabs/tab1']);
+        this.router.navigate(['tab1/']);
       }
     })
     .catch((error) =>{

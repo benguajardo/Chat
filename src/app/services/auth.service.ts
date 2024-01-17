@@ -26,7 +26,7 @@ export class AuthService {
   async login(email: string, pass: string){
     try {
       const user = await this.auth.signInWithEmailAndPassword(email,pass);
-      this.router.navigate(['/tabs/tab1']);
+      this.router.navigate(['tabs/tab1/']);
       this.mensaje("Bienvenido");
       console.log(user);
     } catch (error) {
